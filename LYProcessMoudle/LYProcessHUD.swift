@@ -6,7 +6,7 @@
 //  Copyright © 2016年 liyang. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class LYProcessHUD: UIView {
     
@@ -42,7 +42,7 @@ public class LYProcessHUD: UIView {
             
             DispatchQueue.main.async {
                 LYProcessHUD.bgView.center = destinView.center
-                LYProcessHUD.bgView.frame = destinView.bounds
+                LYProcessHUD.bgView.frame  = destinView.bounds
                 LYProcessHUD.iamgev.center = LYProcessHUD.bgView.center
                 destinView.addSubview(LYProcessHUD.bgView)
                 LYProcessHUD.iamgev.startAnimating()

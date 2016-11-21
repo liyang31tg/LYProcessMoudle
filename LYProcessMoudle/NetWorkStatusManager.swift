@@ -6,7 +6,7 @@
 //  Copyright © 2016年 liyang. All rights reserved.
 //
 
-import Foundation
+import UIKit
 public class NetWorkStatusManager {
   public  enum NetWorkStausManagerType {
         case loading

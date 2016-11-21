@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class LYToastView {
+public class LYToastViewManager {
     
-    static var toastView:ToastView?
+    static var toastView:LYToastView?
     static var workItem:DispatchWorkItem?
     
     
@@ -18,12 +18,14 @@ public class LYToastView {
         if let v = onView {
             workItem?.cancel()
             workItem = nil
-            if let _ = self.toastView {
-            }else{
-                self.toastView = ToastView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-                v.addSubview(self.toastView ?? UIView())
+            DispatchQueue.main.async {
+                if nil == self.toastView {
+                    self.toastView  =  LYToastView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+                    v.addSubview(self.toastView ?? UIView())
+                }
+                self.toastView?.midLable.text = msg
             }
-            self.toastView?.midLable.text = msg
+           
             
         }
         workItem = DispatchWorkItem{
@@ -31,14 +33,14 @@ public class LYToastView {
             toastView = nil
         }
         if let witem = self.workItem {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: witem)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: witem)
         }
     }
     
 }
 
 
-class ToastView: UIView {
+class LYToastView: UIView {
     var bottomConstraint:NSLayoutConstraint?
     
     let backgroundImageView:UIImageView = { () -> UIImageView in
@@ -60,8 +62,9 @@ class ToastView: UIView {
     let midLable:UILabel = {() -> UILabel in
         
         var tmpMidLable = UILabel()
-        tmpMidLable.numberOfLines = 2
-        tmpMidLable.textAlignment = .center
+        tmpMidLable.numberOfLines   = 2
+        tmpMidLable.textColor       = UIColor.white
+        tmpMidLable.textAlignment   = .center
         tmpMidLable.translatesAutoresizingMaskIntoConstraints = false
         return tmpMidLable
     }()
@@ -131,8 +134,8 @@ class ToastView: UIView {
     
     func initKeyBoardNoticefication(){
         UIApplication.shared.keyWindow?.endEditing(true)
-        NotificationCenter.default.addObserver(self, selector: #selector(ToastView.keyBoardWillChangeFrame(notificationa:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ToastView.keyboardWillHide(notificationa:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LYToastView.keyBoardWillChangeFrame(notificationa:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LYToastView.keyboardWillHide(notificationa:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func keyBoardWillChangeFrame(notificationa:Notification){

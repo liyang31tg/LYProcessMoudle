@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B610C4E11DE09DDC005105FE /* LYToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610C4E01DE09DDC005105FE /* LYToastView.swift */; };
 		B617C9D01DE1DF0300AE30C7 /* NetWorkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B617C9CF1DE1DF0300AE30C7 /* NetWorkStatusManager.swift */; };
-		B627696D1DDEEF51007EB731 /* LYProcessMoudle.h in Headers */ = {isa = PBXBuildFile; fileRef = B627696B1DDEEF51007EB731 /* LYProcessMoudle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B627697F1DDEF32A007EB731 /* LYProcessHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627697E1DDEF32A007EB731 /* LYProcessHUD.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,7 +16,6 @@
 		B610C4E01DE09DDC005105FE /* LYToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYToastView.swift; sourceTree = "<group>"; };
 		B617C9CF1DE1DF0300AE30C7 /* NetWorkStatusManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkStatusManager.swift; sourceTree = "<group>"; };
 		B62769681DDEEF51007EB731 /* LYProcessMoudle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYProcessMoudle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B627696B1DDEEF51007EB731 /* LYProcessMoudle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYProcessMoudle.h; sourceTree = "<group>"; };
 		B627696C1DDEEF51007EB731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B627697E1DDEF32A007EB731 /* LYProcessHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYProcessHUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				B617C9CF1DE1DF0300AE30C7 /* NetWorkStatusManager.swift */,
-				B627696B1DDEEF51007EB731 /* LYProcessMoudle.h */,
 				B627696C1DDEEF51007EB731 /* Info.plist */,
 				B627697E1DDEF32A007EB731 /* LYProcessHUD.swift */,
 				B610C4E01DE09DDC005105FE /* LYToastView.swift */,
@@ -68,7 +65,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B627696D1DDEEF51007EB731 /* LYProcessMoudle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +249,7 @@
 		B62769711DDEEF51007EB731 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -277,6 +274,7 @@
 		B62769721DDEEF51007EB731 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
