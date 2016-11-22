@@ -10,7 +10,7 @@ import UIKit
 
 public class LYProcessHUD: UIView {
     
-    static let constantTag = 668
+    static let constantTag  = 668
     
     private static var iamgev:UIImageView = { () -> UIImageView in
         let rect =  CGRect(x: 0, y: 0, width: 75, height: 75)
